@@ -15,46 +15,36 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="text-center">
-                            <h1 class="mt-4 text-warning">{{ title }}</h1>
+                            <h1 class="mt-4 display-5 fw-bold text-warning ">{{ title }}</h1>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <div class="content">
-                            
+                        <div class="content"> 
                             <h3><strong>La mia lista delle cose da fare</strong></h3>
                             <hr>
-                            
                             <ul class="list-unstyled">
-                                
                                 <div v-if="tasks.length === 0">
                                     <h4 class="text-center">Non ci sono attività da fare oggi! Goditi la giornata!</h4>
                                 </div>
-                                
-                                <li v-for="(task, index) in tasks">
-                                    <div class="d-flex justify-content-between">
-                                        
+                                <li v-for="(task, index) in tasks" class="fs-5">
+                                    <div class="d-flex justify-content-between"> 
                                         <div :class="task.done === true ? 'task-done' : ''">
-                                            
                                             <div v-if="task.edit_enabled">
                                                 <input type="text" class="input-task" name="edit_task" id="edit_task" v-model="task.text" @keyup.enter="editTask(index)">
                                             </div>
-                                            
                                             <div v-else>
                                                 {{ task.text }}
                                             </div>
                                         </div>
                                         <div>
-                                            
                                             <button class="me-1 btn btn-sm" :class="task.done ? 'btn-dark' : 'btn-success'" @click="changeTaskStatus(index)">
                                                 <i class="fas" :class="task.done ? 'fa-x' : 'fa-check'"></i>
                                             </button>
-                                            
                                             <button class="me-1 btn btn-sm btn-warning" @click="editTask(index)">
                                                 <i class="fas fa-edit"></i>
                                             </button>
-                                            
                                             <button class="btn btn-sm btn-danger" @click="deleteTask(index)">
                                                 <i class="fas fa-trash"></i>
                                             </button>
@@ -64,10 +54,10 @@
                             </ul>
                             <div class="input-group mt-4">
                                 <div class="input-field">
-                                    <input type="text" class="input-task" placeholder="Aggiungi nuova Task" name="newTask" id="newTask" v-model="newTask" @keyup.enter="addTask">
+                                    <input type="text" class="input-task form-control rounded" placeholder="Aggiungi nuova Task" name="newTask" id="newTask" v-model="newTask" @keyup.enter="addTask">
                                 </div>
                                 <div class="input-button">
-                                    <button class="btn btn-sm btn-primary" @click="addTask()">
+                                    <button class="btn btn-sm btn-primary rounded" @click="addTask()">
                                         <i class="fas fa-plus mr-2"></i>
                                         Aggiungi Task
                                     </button>
