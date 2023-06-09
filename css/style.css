@@ -5,21 +5,20 @@
 }
 
 body{
-    background-color: rgb(196, 21, 21);
-
+    background-color: rgb(105, 3, 3);
 }
 
 .content{
     width: 75%;
     margin: 0 auto;
     padding: 25px;
-    background-color: rgb(46, 196, 196);
+    background-color: rgba(251, 255, 0, 0.719);
     color: #fff;
 }
 
-.list-unstyled{
-    padding: 20px 0;
-    border-bottom: 1px solid rgb(180,180,180);
+.list-unstyled li{
+    padding: 25px 0;
+    border-bottom: 1px solid whitesmoke;
 }
 
 .input-group{
@@ -29,19 +28,14 @@ body{
 }
 
 .input-field{
-    width: 85%;
-    border: none;
-    padding: 5px 5px;
-}
-
-.input-button{
-    width: 15%;
+    width: 80%;
 }
 
 .input-task{
     width: 100%;
-    border: none
-    /*elemento mancante*/
+    border: none;
+    padding: 5px 5px;
+
 }
 
 .task-done{
